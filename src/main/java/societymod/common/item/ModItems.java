@@ -1,8 +1,7 @@
-package mff.brokenswing.societymod.common.item;
+package societymod.common.item;
 
 import java.util.ArrayList;
 
-import mff.brokenswing.societymod.common.SocietyMod;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -15,6 +14,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import societymod.common.SocietyMod;
 
 @ObjectHolder(SocietyMod.MODID)
 @EventBusSubscriber(modid = SocietyMod.MODID)

@@ -1,11 +1,11 @@
-package mff.brokenswing.societymod.common.block;
+package societymod.common.block;
 
-import mff.brokenswing.societymod.common.SocietyMod;
 import net.minecraft.block.Block;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
+import societymod.common.SocietyMod;
 
 @ObjectHolder(SocietyMod.MODID)
 @EventBusSubscriber(modid = SocietyMod.MODID)

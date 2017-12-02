@@ -1,4 +1,4 @@
-package mff.brokenswing.societymod.common;
+package societymod.common;
 
 import net.minecraftforge.fml.common.Mod;
 
