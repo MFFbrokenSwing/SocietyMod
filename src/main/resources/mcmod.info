@@ -1,0 +1,16 @@
+[
+{
+  "modid": "societymod",
+  "name": "Society Mod",
+  "description": "A mod which implements the possibility to create societies",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["BrokenSwing"],
+  "credits": "The Forge, FML and MinecraftForgeFrance guys",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
