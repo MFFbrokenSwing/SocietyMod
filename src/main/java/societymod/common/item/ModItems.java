@@ -23,27 +23,27 @@ public class ModItems {
     private static final ArrayList<Item> ITEMS = new ArrayList<>();
 
     @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event) {
+    public static void registerItems(final RegistryEvent.Register<Item> event) {
         ITEMS.forEach(event.getRegistry()::register);
     }
-    
+
     /**
      * A bit quicker than {@code ITEMS.add(item)}
      */
-    private static void register(Item item) {
+    private static void register(final Item item) {
         ITEMS.add(item);
     }
 
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
-    public static void registerModels(ModelRegistryEvent event) {
+    public static void registerModels(final ModelRegistryEvent event) {
         ITEMS.forEach(item -> {
             ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
         });
     }
 
-    public static void registerItemBlock(Block block) {
-        ItemBlock item = new ItemBlock(block);
+    public static void registerItemBlock(final Block block) {
+        final ItemBlock item = new ItemBlock(block);
         item.setRegistryName(block.getRegistryName());
         item.setUnlocalizedName(block.getUnlocalizedName());
         register(item);
