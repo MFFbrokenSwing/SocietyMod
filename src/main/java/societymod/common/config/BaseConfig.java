@@ -32,21 +32,21 @@ public class BaseConfig {
         load();
     }
 
-    public int getInt(final String key) {
+    public final int getInt(final String key) {
         if (INTEGERS.containsKey(key))
             return INTEGERS.get(key).intValue();
         LOGGER.warn("Tried to get unknown int value from config : " + key);
         return 0;
     }
 
-    public String getString(final String key) {
+    public final String getString(final String key) {
         if (STRINGS.containsKey(key))
             return STRINGS.get(key);
         LOGGER.warn("Tried to get unknown string value from config : " + key);
         return "";
     }
 
-    public boolean getBool(final String key) {
+    public final boolean getBool(final String key) {
         if (BOOLS.containsKey(key))
             return BOOLS.get(key).booleanValue();
         LOGGER.warn("Tried to get unknown boolean value from config : " + key);

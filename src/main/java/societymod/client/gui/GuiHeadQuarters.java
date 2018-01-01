@@ -1,12 +1,9 @@
 package societymod.client.gui;
 
-import java.io.IOException;
-
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.tileentity.TileEntity;
 import societymod.common.tile.TileHeadQuarters;
 
-public class GuiHeadQuarters extends GuiScreen {
+public class GuiHeadQuarters extends GuiSocietyMod {
 
     private final TileHeadQuarters tile;
 
@@ -22,19 +19,8 @@ public class GuiHeadQuarters extends GuiScreen {
     }
 
     @Override
-    protected void mouseClicked(final int mouseX, final int mouseY, final int mouseButton) throws IOException {
-        super.mouseClicked(mouseX, mouseY, mouseButton);
+    public void initGui() {
+        super.initGui();
     }
-
-    @Override
-    protected void keyTyped(final char typedChar, final int keyCode) throws IOException {
-        super.keyTyped(typedChar, keyCode);
-    }
-
-    @Override
-    public void updateScreen() {}
-
-    @Override
-    public void initGui() {}
 
 }

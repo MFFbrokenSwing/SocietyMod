@@ -4,9 +4,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
+import societymod.client.gui.component.IGuiComponent.IClickableComponent;
 import societymod.common.SocietyMod;
 
-public class GuiButtonArrow extends Gui {
+public class GuiButtonArrow extends Gui implements IGuiComponent, IClickableComponent {
 
     private static final ResourceLocation RIGHT_ARROW = new ResourceLocation(SocietyMod.MODID, "textures/gui/right_arrow.png");
 
@@ -37,6 +38,7 @@ public class GuiButtonArrow extends Gui {
         this.direction = direction;
     }
 
+    @Override
     public void draw(final int mouseX, final int mouseY) {
         this.mc.getTextureManager().bindTexture(RIGHT_ARROW);
         hovered = mouseX >= this.x && mouseX <= this.x + this.width && mouseY >= this.y && mouseY <= this.y + this.height;
@@ -54,6 +56,7 @@ public class GuiButtonArrow extends Gui {
         return hovered;
     }
 
+    @Override
     public boolean mouseClicked(final int mouseX, final int mouseY, final int mouseButton) {
         return enabled && hovered;
     }
@@ -68,5 +71,8 @@ public class GuiButtonArrow extends Gui {
         }
 
     }
+
+    @Override
+    public void mouseClickMove(final int mouseX, final int mouseY, final int clickedButton, final long timeSinceLastClick) {}
 
 }

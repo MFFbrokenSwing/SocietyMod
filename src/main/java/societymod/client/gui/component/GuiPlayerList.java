@@ -109,9 +109,11 @@ public class GuiPlayerList extends Gui {
         if (this.scrollBarSize > 0 && clickedY >= 0 && clickedMouseButton == 0)
             if (mouseY != this.clickedY) {
                 this.scrollBarY += mouseY - this.clickedY;
+                final int noClampedValue = this.scrollBarY;
                 this.scrollBarY = Math.max(0, this.scrollBarY);
                 this.scrollBarY = Math.min(this.scrollBarY, this.height - this.scrollBarSize);
-                this.clickedY = mouseY;
+                if (this.scrollBarY == noClampedValue)
+                    this.clickedY = mouseY;
             }
     }
 

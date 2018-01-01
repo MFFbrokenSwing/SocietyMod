@@ -1,2 +1,3 @@
 notification.welcome=You can create or join a society
-tile.head_quarters=Head quarters
+tile.head_quarters.name=Head quarters
+chart.unavailable=No chart to display
