@@ -10,7 +10,7 @@ public interface IMoneyHolder {
 
     public float getBalance();
 
-    public void setBalance(int newBalance);
+    public void setBalance(float newBalance);
 
     /**
      * Adds the specified amount of money in the holder's balance.

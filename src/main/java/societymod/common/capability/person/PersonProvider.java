@@ -1,4 +1,4 @@
-package societymod.common.capability;
+package societymod.common.capability.person;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -50,10 +50,8 @@ public class PersonProvider implements ICapabilitySerializable<NBTBase> {
 
     @SubscribeEvent
     public static void attachCapability(final AttachCapabilitiesEvent<Entity> event) {
-        if (event.getObject() instanceof EntityPlayer) {
-            System.out.println("Attaching capability");
+        if (event.getObject() instanceof EntityPlayer)
             event.addCapability(CAPA_LOC, new PersonProvider((EntityPlayer) event.getObject(), event.getObject().world.isRemote ? Side.SERVER : Side.CLIENT));
-        }
     }
 
 }

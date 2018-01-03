@@ -11,15 +11,17 @@ import societymod.common.SocietyMod;
 
 public class BaseConfig {
 
-    private final static Logger LOGGER = LogManager.getLogger(SocietyMod.MODID);
+    protected final static Logger LOGGER = LogManager.getLogger(SocietyMod.MODID);
 
     protected final Configuration            config;
     protected final HashMap<String, Integer> INTEGERS = new HashMap<>();
     protected final HashMap<String, String>  STRINGS  = new HashMap<>();
     protected final HashMap<String, Boolean> BOOLS    = new HashMap<>();
 
+    protected final String VERSION = "alpha 0.0.0";
+
     public BaseConfig(final File file) {
-        this.config = new Configuration(file);
+        this.config = new Configuration(file, VERSION);
         load();
     }
 

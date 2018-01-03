@@ -13,7 +13,6 @@ public class GuiStyleManager {
     private static final HashMap<String, IGuiStyle> STYLES = new HashMap<>();
     private static String                           styleName;
 
-    private static boolean   needsUpdate = false;
     private static IGuiStyle cachedStyle = null;
 
     /**
@@ -40,7 +39,7 @@ public class GuiStyleManager {
      */
     public static void setStyle(final String name) {
         styleName = name;
-        needsUpdate = true;
+        cachedStyle = null;
     }
 
     /**
@@ -49,8 +48,7 @@ public class GuiStyleManager {
      * @return the style to use
      */
     public static IGuiStyle getStyle() {
-        if (needsUpdate) {
-            needsUpdate = false;
+        if (cachedStyle == null) {
             if (!STYLES.containsKey(styleName)) {
                 LOGGER.warn("GUI style was set to {} but no style exists with this name. Falling back to 'default'.", styleName);
                 styleName = "default";

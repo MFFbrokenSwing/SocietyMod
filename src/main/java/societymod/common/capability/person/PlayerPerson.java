@@ -1,4 +1,4 @@
-package societymod.common.capability;
+package societymod.common.capability.person;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.relauncher.Side;
 import societymod.common.network.ModNetwork;
-import societymod.common.network.packet.SPacketSocietiesIds;
+import societymod.common.network.packet.SPacketUpdatePerson;
 
 public class PlayerPerson extends DefaultPerson {
 
@@ -22,7 +22,7 @@ public class PlayerPerson extends DefaultPerson {
     public void setSocietiesIds(final List<String> ids) {
         super.setSocietiesIds(ids);
         if (this.side.isServer())
-            ModNetwork.NETWORK.sendTo(new SPacketSocietiesIds(this), (EntityPlayerMP) player);
+            ModNetwork.NETWORK.sendTo(new SPacketUpdatePerson(this), (EntityPlayerMP) player);
     }
 
 }

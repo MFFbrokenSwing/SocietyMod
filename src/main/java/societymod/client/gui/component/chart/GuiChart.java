@@ -1,4 +1,4 @@
-package societymod.client.gui.component;
+package societymod.client.gui.component.chart;
 
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
@@ -7,9 +7,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.math.Vec2f;
+import societymod.client.gui.component.IGuiComponent;
 import societymod.client.gui.component.IGuiComponent.IClickableComponent;
 import societymod.client.gui.component.IGuiComponent.IUpdatableComponent;
-import societymod.client.gui.component.chart.IChart;
 import societymod.client.gui.style.GuiStyleManager;
 import societymod.client.gui.style.IGuiStyle;
 import societymod.client.gui.style.MeaningType;

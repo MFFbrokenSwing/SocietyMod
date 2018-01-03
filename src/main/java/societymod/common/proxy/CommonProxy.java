@@ -7,10 +7,13 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import societymod.common.SocietyMod;
-import societymod.common.capability.DefaultPerson;
-import societymod.common.capability.IPerson;
-import societymod.common.capability.PersonStorage;
+import societymod.common.capability.money.DefaultMoneyHolder;
+import societymod.common.capability.money.MoneyStorage;
+import societymod.common.capability.person.DefaultPerson;
+import societymod.common.capability.person.IPerson;
+import societymod.common.capability.person.PersonStorage;
 import societymod.common.config.BaseConfig;
+import societymod.common.money.IMoneyHolder;
 import societymod.common.network.ModNetwork;
 
 public abstract class CommonProxy {
@@ -26,6 +29,7 @@ public abstract class CommonProxy {
 
     public void init(final FMLInitializationEvent event) {
         CapabilityManager.INSTANCE.register(IPerson.class, new PersonStorage(), DefaultPerson.class);
+        CapabilityManager.INSTANCE.register(IMoneyHolder.class, new MoneyStorage(), DefaultMoneyHolder.class);
         ModNetwork.init();
     }
 

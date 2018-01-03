@@ -9,6 +9,8 @@ import societymod.common.config.BaseConfig;
 
 public class ClientConfig extends BaseConfig {
 
+    private static final String CAT_PRE = Configuration.CATEGORY_GENERAL;
+
     public ClientConfig(final File file) {
         super(file);
     }
@@ -16,12 +18,16 @@ public class ClientConfig extends BaseConfig {
     @Override
     protected void load() {
         super.load();
-        final String category = Configuration.CATEGORY_CLIENT;
+        final String category = CAT_PRE + ".graphic-user-interfaces";
         Property p;
 
         // Gui style configuration
-        p = config.get(category + ".graphic-user-interfaces", "use_style", "default", "The name of the style to use");
-        GuiStyleManager.setStyle(p.getName());
+        config.setCategoryComment(category, "Settings about graphic user interfaces");
+
+        p = config.get(category, "use_style", "default", "The name of the style to use");
+        GuiStyleManager.setStyle(p.getString());
+
+        config.save();
     }
 
 }

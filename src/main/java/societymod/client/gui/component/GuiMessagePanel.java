@@ -38,6 +38,10 @@ public class GuiMessagePanel extends Gui implements IGuiComponent {
         this.type = type;
     }
 
+    public int getHeight() {
+        return height;
+    }
+
     @Override
     public void draw(final int mouseX, final int mouseY) {
         final IGuiStyle style = GuiStyleManager.getStyle();

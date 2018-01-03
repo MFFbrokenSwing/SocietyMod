@@ -1,9 +1,11 @@
-package societymod.common.money;
+package societymod.server.money;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import societymod.common.money.IMoneyHolder;
 
 public interface IMoneySystem {
 
@@ -16,7 +18,7 @@ public interface IMoneySystem {
      * @return the instance of {@link IMoneyHolder}, can't be null
      */
     @Nonnull
-    public IMoneyHolder getHolderFor(EntityPlayer player);
+    public IMoneyHolder getHolderFor(EntityPlayerMP player);
 
     /**
      * Returns the instance of {@link IMoneyHolder} for the specified
@@ -28,8 +30,8 @@ public interface IMoneySystem {
      */
     @Nullable
     default public IMoneyHolder getHolderFor(final Object obj) {
-        if (obj instanceof EntityPlayer)
-            return getHolderFor((EntityPlayer) obj);
+        if (obj instanceof EntityPlayerMP)
+            return getHolderFor((EntityPlayerMP) obj);
         return null;
     }
 

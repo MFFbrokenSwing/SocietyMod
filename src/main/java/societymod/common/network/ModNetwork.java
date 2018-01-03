@@ -13,7 +13,10 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 import societymod.common.SocietyMod;
+import societymod.common.network.packet.CPacketOpenedGuiMenu;
+import societymod.common.network.packet.SPacketMoney;
 import societymod.common.network.packet.SPacketToast;
+import societymod.common.network.packet.SPacketUpdatePerson;
 
 public class ModNetwork implements IGuiHandler {
 
@@ -22,7 +25,14 @@ public class ModNetwork implements IGuiHandler {
     public static void init() {
         NetworkRegistry.INSTANCE.registerGuiHandler(SocietyMod.instance, new ModNetwork());
         NETWORK.registerMessage(SPacketToast.Handler.class, SPacketToast.class, 0, Side.CLIENT);
+        NETWORK.registerMessage(SPacketUpdatePerson.Handler.class, SPacketUpdatePerson.class, 1, Side.CLIENT);
+        NETWORK.registerMessage(SPacketMoney.Handler.class, SPacketMoney.class, 2, Side.CLIENT);
+        NETWORK.registerMessage(CPacketOpenedGuiMenu.Handler.class, CPacketOpenedGuiMenu.class, 3, Side.SERVER);
     }
+
+    // #############################
+    // ##### GUI HANDLER STUFF #####
+    // #############################
 
     @Override
     public Object getServerGuiElement(final int ID, final EntityPlayer player, final World world, final int x, final int y, final int z) {

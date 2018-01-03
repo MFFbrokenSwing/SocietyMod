@@ -1,3 +1,4 @@
-notification.welcome=You can create or join a society
-tile.head_quarters.name=Head quarters
 chart.unavailable=No chart to display
+keybinding.opengui.desc=Opens the SocietyMod GUI
+message.welcome.title=Welcome new slave of the society
+message.welcome.text=SocietyMod welcomes you ! You're now ready to enter in the business world, don't forget to consult frequently this menu to track server news and be able to become rich and famous.

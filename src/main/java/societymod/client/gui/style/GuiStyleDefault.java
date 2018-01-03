@@ -6,7 +6,7 @@ public class GuiStyleDefault implements IGuiStyle {
     private static final ColorSet HINT_COLORS   = new ColorSet(0xFF1ABC9C, 0xFFDBFAF4);
     private static final ColorSet WARN_COLORS   = new ColorSet(0xFFF0B37E, 0xFFFFEDCC);
     private static final ColorSet NORMAL_COLORS = new ColorSet(0xFFD8D8D8, 0xFFEEEEEE);
-    private static final ColorSet CHART_COLORS = new ColorSet(0xFF775B5B, 0xFFBAABAB);
+    private static final ColorSet CHART_COLORS  = new ColorSet(0xFF775B5B, 0xFFBAABAB);
 
     @Override
     public int getMargin() {
