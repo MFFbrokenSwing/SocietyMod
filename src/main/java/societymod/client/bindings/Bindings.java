@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
 import net.minecraftforge.fml.relauncher.Side;
-import societymod.client.gui.GuiMenu;
+import societymod.client.gui.GuiWelcome;
 import societymod.common.SocietyMod;
 
 @EventBusSubscriber(modid = SocietyMod.MODID, value = Side.CLIENT)
@@ -21,7 +21,7 @@ public class Bindings {
     @SubscribeEvent
     public static void openSocietyModGui(final KeyInputEvent event) {
         if (MAIN_GUI_BINDING.isPressed())
-            Minecraft.getMinecraft().displayGuiScreen(new GuiMenu());
+            Minecraft.getMinecraft().displayGuiScreen(new GuiWelcome());
     }
 
 }

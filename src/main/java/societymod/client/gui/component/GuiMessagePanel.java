@@ -2,6 +2,8 @@ package societymod.client.gui.component;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
@@ -23,7 +25,10 @@ public class GuiMessagePanel extends Gui implements IGuiComponent {
     protected static final int INTER_LINE = 3;
 
     public GuiMessagePanel(final Minecraft mc, final String title, final String message, final int x, final int y, final int width) {
-        this.title = title;
+        String trimmedTitle = mc.fontRenderer.trimStringToWidth(title, width - GuiStyleManager.getStyle().getMargin() * 2);
+        if (!trimmedTitle.equals(title) && trimmedTitle.length() >= 7)
+            trimmedTitle = StringUtils.abbreviate(trimmedTitle, trimmedTitle.length() - 3);
+        this.title = trimmedTitle;
         this.x = x;
         this.y = y;
         this.width = width;
