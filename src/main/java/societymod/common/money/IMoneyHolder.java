@@ -10,7 +10,14 @@ public interface IMoneyHolder {
 
     public float getBalance();
 
-    public void setBalance(float newBalance);
+    /**
+     * Sets the balance for the holder.
+     * 
+     * @param newBalance
+     *            The new balance of the player
+     * @return the new balance of the player
+     */
+    public float setBalance(float newBalance);
 
     /**
      * Adds the specified amount of money in the holder's balance.

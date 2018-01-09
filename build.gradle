@@ -27,6 +27,10 @@ minecraft {
     makeObfSourceJar = false
 }
 
+dependencies {
+	compile fileTree(dir : 'libs', include : ['*.jar'])
+}
+
 processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version

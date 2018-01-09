@@ -6,6 +6,8 @@ import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.server.permission.PermissionAPI;
 import societymod.common.SocietyMod;
 import societymod.common.capability.money.DefaultMoneyHolder;
 import societymod.common.capability.money.MoneyStorage;
@@ -31,10 +33,18 @@ public abstract class CommonProxy {
         CapabilityManager.INSTANCE.register(IPerson.class, new PersonStorage(), DefaultPerson.class);
         CapabilityManager.INSTANCE.register(IMoneyHolder.class, new MoneyStorage(), DefaultMoneyHolder.class);
         ModNetwork.init();
+        registerPermissions();
     }
 
+    public void serverStarting(FMLServerStartingEvent event) {}
+
     /**
-     * Creates a side specific configuration
+     * Registers mod's permissions on {@link PermissionAPI}.
+     */
+    public void registerPermissions() {}
+
+    /**
+     * Creates a side specific configuration.
      */
     protected abstract BaseConfig createConfig(File file);
 

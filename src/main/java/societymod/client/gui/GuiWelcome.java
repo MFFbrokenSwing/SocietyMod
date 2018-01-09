@@ -31,7 +31,7 @@ public class GuiWelcome extends GuiSocietyMod {
     public void initGui() {
         super.initGui();
         if (this.mc.player.getCapability(PersonProvider.PERSON_CAPABILITY, null).hasOpenedGuiMenu()) {
-            this.mc.displayGuiScreen(null);
+            this.mc.displayGuiScreen(new GuiMenu());
         } else {
             GuiMessagePanel panel = new GuiMessagePanel(this.mc, I18n.format("message.welcome.title"), I18n.format("message.welcome.text"), this.width / 4, this.width / 4, this.width / 2);
             final int height = panel.getHeight();

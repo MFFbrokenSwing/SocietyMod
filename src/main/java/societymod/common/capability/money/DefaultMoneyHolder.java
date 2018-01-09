@@ -12,8 +12,9 @@ public class DefaultMoneyHolder implements IMoneyHolder {
     }
 
     @Override
-    public void setBalance(final float newBalance) {
+    public float setBalance(final float newBalance) {
         this.money = newBalance;
+        return this.money;
     }
 
     @Override

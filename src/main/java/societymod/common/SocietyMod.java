@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import societymod.common.proxy.CommonProxy;
 
 @Mod(modid = SocietyMod.MODID, version = "unknown", useMetadata = true, name = "Society Mod")
@@ -23,5 +24,10 @@ public class SocietyMod {
     @EventHandler
     public void init(final FMLInitializationEvent event) {
         CommonProxy.proxy.init(event);
+    }
+
+    @EventHandler
+    public void serverStarting(FMLServerStartingEvent event) {
+        CommonProxy.proxy.serverStarting(event);
     }
 }

@@ -2,3 +2,6 @@ chart.unavailable=Aucun graphique à afficher
 keybinding.opengui.desc=Ouvre l'interface de SoceityMod
 message.welcome.title=Bienvenue nouvel esclave de la société
 message.welcome.text=SocietyMod vous souhaite la bienvenue dans le merveilleux monde de l'entreprenariat. Ce menu vous permettra d'accéder à toutes les fonctionnalités du mod, n'hésitez pas à le consulter régulièrement pour vous mettre au courant de l'actualité du serveur et afin de pouvoir gérer au mieux votre entreprise.
+
+command.balance.set.success=Le solde de %1$s a été fixé à %2$s %3$s.
+command.balance.get.success=Le solde de %1$s est de %2$s %3$s.
